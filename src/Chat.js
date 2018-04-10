@@ -37,7 +37,7 @@ class Chat extends Component {
   }
 
   pressEnter = ev => {
-    console.log(ev.key)
+    ev.preventDefault();
     if (ev.key == 'Enter') {
       this.sendMessage();
     }
