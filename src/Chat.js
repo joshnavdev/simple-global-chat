@@ -63,6 +63,7 @@ class Chat extends Component {
                   placeholder="message"
                   value={this.state.message}
                   onChange={ev => this.setState({ message: ev.target.value })}
+                  onKeyPress={this.sendMessage}
                   className="form-control"
                 />
                 <br />
