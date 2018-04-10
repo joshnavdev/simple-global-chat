@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const historicalSchema = new Schema({
+const historySchema = new Schema({
     username: String,
     message: String,
     dateSent: Date
 });
 
-mongoose.model('historical', historicalSchema);
+mongoose.model('history', historySchema);

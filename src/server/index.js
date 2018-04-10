@@ -9,10 +9,10 @@ const io = require('socket.io')(server);
 const port = process.env.PORT || 8000;
 
 // Setting up the models
-require('./models/Historical');
+require('./models/History');
 
 //models
-const Historical = mongoose.model('historical');
+const History = mongoose.model('history');
 
 //Conecntig with MongoDB
 const mongoURI = "mongodb://joshua:password@ds139919.mlab.com:39919/simple-chat-app";
@@ -34,13 +34,13 @@ io.on('connection', (socket) => {
 
     socket.on('SEND_MESSAGE', async data => {
         const { username, message } = data;
-        const historical = new Historical({
+        const history = new History({
             username,
             message,
             dateSent: Date.now()
         });
 
-        await historical.save();
+        await history.save();
         io.emit('RECEIVE_MESSAGE', data);
     });
 
