@@ -40,7 +40,7 @@ class Chat extends Component {
     return (
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-4">
+          <div className="col">
             <div className="card">
               <div className="card-body">
                 <div className="card-title">Global Chat</div>
