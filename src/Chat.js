@@ -36,6 +36,12 @@ class Chat extends Component {
     console.log(this.state.messages)
   }
 
+  pressEnter = ev => {
+    if (ev.key == 'Enter') {
+      this.sendMessage();
+    }
+  }
+
   render() {
     return (
       <div className="container">
