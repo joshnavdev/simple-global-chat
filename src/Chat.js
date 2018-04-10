@@ -11,7 +11,7 @@ class Chat extends Component {
       messages: []
     };
 
-    this.socket = io();
+    this.socket = io('http://localhost:8000');
 
     this.socket.on('RECEIVE_MESSAGE', data => {
       this.addMessage(data);
@@ -19,7 +19,6 @@ class Chat extends Component {
   }
 
   sendMessage = (ev) => {
-    ev.preventDefault();
     const { username, message } = this.state;
 
     this.socket.emit('SEND_MESSAGE', {
@@ -37,8 +36,7 @@ class Chat extends Component {
   }
 
   pressEnter = ev => {
-    ev.preventDefault();
-    if (ev.key == 'Enter') {
+    if (ev.key === 'Enter') {
       this.sendMessage();
     }
   }
